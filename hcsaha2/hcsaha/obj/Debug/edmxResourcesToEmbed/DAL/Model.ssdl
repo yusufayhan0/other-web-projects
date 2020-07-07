@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kullanici" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="gunler">
+    <Key>
+      <PropertyRef Name="gunID" />
+    </Key>
+    <Property Name="gunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gun" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="resimler">
+    <Key>
+      <PropertyRef Name="resimID" />
+    </Key>
+    <Property Name="resimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="resim" Type="nvarchar(max)" />
+    <Property Name="eklenmeTarihi" Type="datetime" />
+  </EntityType>
+  <EntityType Name="rezervasyon">
+    <Key>
+      <PropertyRef Name="rezervasyonID" />
+    </Key>
+    <Property Name="rezervasyonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gun" Type="int" />
+    <Property Name="saat" Type="int" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="onay" Type="bit" />
+  </EntityType>
+  <EntityType Name="saatler">
+    <Key>
+      <PropertyRef Name="saatID" />
+    </Key>
+    <Property Name="saatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="saat" Type="int" />
+  </EntityType>
+  <EntityType Name="siteYazilari">
+    <Key>
+      <PropertyRef Name="yaziID" />
+    </Key>
+    <Property Name="yaziID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslik" Type="nvarchar" MaxLength="500" />
+    <Property Name="yazi" Type="nvarchar(max)" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+    <Property Name="iletisimBaslik" Type="nvarchar" MaxLength="100" />
+    <Property Name="iletisimYazi" Type="nvarchar" MaxLength="500" />
+    <Property Name="rezervasyonbaslik" Type="nvarchar" MaxLength="100" />
+    <Property Name="rezervasyonyazi" Type="nvarchar(max)" />
+    <Property Name="hakkimizda" Type="nvarchar(max)" />
+    <Property Name="header" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gunler" EntityType="Self.gunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="resimler" EntityType="Self.resimler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rezervasyon" EntityType="Self.rezervasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saatler" EntityType="Self.saatler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="siteYazilari" EntityType="Self.siteYazilari" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

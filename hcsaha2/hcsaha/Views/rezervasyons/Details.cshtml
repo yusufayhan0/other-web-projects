@@ -1,0 +1,67 @@
+﻿@model hcsaha.DAL.rezervasyon
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>rezervasyon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gun)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.onay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.onay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.rezervasyonID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>@ViewBag.Title - Onur Kargo </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link href="~/css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/component.css" rel="stylesheet" />
+    <link href="~/css/custom-styles.css" rel="stylesheet" />
+    <link href="~/css/font-awesome-ie7.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <script src="~/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="~/js/AnimOnScroll.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/classie.js"></script>
+    <script src="~/js/imagesloaded.js"></script>
+    <script src="~/js/jquery-1.9.1.js"></script>
+    <script src="~/js/masonry.pkgd.min.js"></script>
+
+
+</head>
+<body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+    <!-- Site header starts here -->
+    <!-- main content starts here -->
+
+    <div class="container b-radius-top">
+        <div class="top-bar b-radius">
+            <div class="top-content">
+                <ul>
+                    <li><a href="#"><i class="fw-icon-link icon"></i>www.onurkargo.com</a></li>
+                    <li><a href="#"><i class="fw-icon-envelope-alt icon"></i>info@onurkargo.com</a></li>
+                    <li><a href="#"><i class="fw-icon-phone icon"></i>0(380)</a></li>
+                </ul>
+            </div>
+            <div class="social">
+                <ul>
+                    <li><a href="http://www.facebook.com" target="_blank"><i class="fw-icon-facebook icon"></i></a></li>
+                    <li><a href="http://www.twitter.com" target="_blank"><i class="fw-icon-twitter icon"></i></a></li>
+                    <li><a href="http://www.linkedin.com" target="_blank"><i class="fw-icon-linkedin icon"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="site-header">
+
+
+            <!-- Site Name starts here -->
+
+            <div class="site-name">
+                <h1>Onur Kargo</h1>
+                <h5>Her biji Onur kargo</h5>
+            </div>
+
+            <!-- Site Name ends -->
+            <!-- Menu starts here -->
+            <div class="menu">
+                <div class="navbar">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <i class="fw-icon-th-list"></i>
+                    </a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="/Home/Index">Anasayfa</a></li>
+                            <li><a href="#">Kargo Takip</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu ends -->
+        </div>
+
+        <!-- Banner starts here -->
+
+        <div class="banner">
+            <div class="carousel slide" id="myCarousel">
+                <!-- Carousel items -->
+                <div class="carousel-inner">
+                    @using (okargo.DAL.okargoEntities db = new okargo.DAL.okargoEntities())
+                    {
+                        string s = "active";
+                        foreach (var item in db.Slider.ToList())
+                        {
+                            <div class="item @s">
+                                <img src="@item.yol" style="height:500px" />
+                            </div>
+                            s = "";
+                        }
+                    }
+
+                </div>
+                <a data-slide="prev" href="#myCarousel" class="carousel-control left"><i class="fw-icon-chevron-left"></i></a>
+                <a data-slide="next" href="#myCarousel" class="carousel-control right"><i class="fw-icon-chevron-right"></i></a>
+            </div>
+        </div>
+
+
+        <!-- Banner ends here -->
+        <!-- Main content starts here -->
+
+        @RenderBody()
+
+    </div>
+    <div class="container bg-blue b-radius-bottom">
+        <div class="site-footer">
+            <div class="row-fluid">
+                <div class="span4">
+                    <div class="user-info">
+                        <script language="javascript" src="http://ic.sitekodlari.com/paylas1.js"></script>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="user-info">
+                        <div class="block-title">
+                            <h1>Hakkımızda</h1>
+                            <h2>Merak ettiğiniz ne var?</h2>
+                        </div>
+                        <div class="block-content">
+                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi Sed egestas, ante et vulputate volutpat</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="span4">
+                    <div class="user-info">
+                        <div class="block-title">
+                            <h1>İletişim </h1>
+                            <h2>Bize ulaşın</h2>
+                        </div>
+                        <div class="block-content">
+                            <p>0(380) 716 36 37</p>
+                            <p>Jorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi Sed egestas, ante et vulputate volutpat</p>
+
+                        </div>
+                    </div>
+                </div>
+                <script language="javascript" src="http://ic.sitekodlari.com/yukaricik3.js"></script>
+            </div>
+        </div>
+        <div class="copy-rights">
+            Copyright (c) onurkargo.com. Bütün hakları saklıdır.  Designed by:  <a href="http://www.onurkargo.net"> </a>
+        </div>
+
+    </div>
+
+
+
+    <script src="~/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script src="~/js/AnimOnScroll.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/classie.js"></script>
+    <script src="~/js/imagesloaded.js"></script>
+    <script src="~/js/jquery-1.9.1.js"></script>
+    <script src="~/js/masonry.pkgd.min.js"></script>
+    <script>
+      new AnimOnScroll( document.getElementById( 'grid' ), {
+        minDuration : 0.4,
+        maxDuration : 0.7,
+        viewportFactor : 0.2
+      } );
+    </script>
+    <script>
+$('#myCarousel').carousel({
+    interval: 1800
+});
+    </script>
+
+
+
+
+</body>
+</html>

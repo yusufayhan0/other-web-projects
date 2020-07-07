@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="okargoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="paketler">
+    <Key>
+      <PropertyRef Name="gonderiID" />
+    </Key>
+    <Property Name="gonderiID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gonderi_no" Type="nvarchar(max)" />
+    <Property Name="tc" Type="nvarchar" MaxLength="11" />
+    <Property Name="adi" Type="nvarchar(max)" />
+    <Property Name="soyadi" Type="nvarchar(max)" />
+    <Property Name="nereden" Type="int" />
+    <Property Name="nereye" Type="int" />
+    <Property Name="aliciadisoyadi" Type="nvarchar(max)" />
+    <Property Name="adres" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nerede" Type="nvarchar(max)" />
+    <Property Name="fiyat" Type="int" />
+    <Property Name="agirlik" Type="int" />
+    <Property Name="alimsaati" Type="datetime" />
+    <Property Name="tahminiteslim" Type="datetime" />
+    <Property Name="dagitimacikti" Type="bit" />
+  </EntityType>
+  <EntityType Name="personel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="70" />
+    <Property Name="sifre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="yetki" Type="bit" />
+  </EntityType>
+  <EntityType Name="sehirler">
+    <Key>
+      <PropertyRef Name="sehirID" />
+    </Key>
+    <Property Name="sehirID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehir" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="sliderID" />
+    </Key>
+    <Property Name="sliderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yol" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_paketler_sehirler">
+    <End Role="sehirler" Type="Self.sehirler" Multiplicity="0..1" />
+    <End Role="paketler" Type="Self.paketler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sehirler">
+        <PropertyRef Name="sehirID" />
+      </Principal>
+      <Dependent Role="paketler">
+        <PropertyRef Name="nereden" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_paketler_sehirler1">
+    <End Role="sehirler" Type="Self.sehirler" Multiplicity="0..1" />
+    <End Role="paketler" Type="Self.paketler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sehirler">
+        <PropertyRef Name="sehirID" />
+      </Principal>
+      <Dependent Role="paketler">
+        <PropertyRef Name="nereye" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="okargoModelStoreContainer">
+    <EntitySet Name="paketler" EntityType="Self.paketler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="personel" EntityType="Self.personel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sehirler" EntityType="Self.sehirler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_paketler_sehirler" Association="Self.FK_paketler_sehirler">
+      <End Role="sehirler" EntitySet="sehirler" />
+      <End Role="paketler" EntitySet="paketler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_paketler_sehirler1" Association="Self.FK_paketler_sehirler1">
+      <End Role="sehirler" EntitySet="sehirler" />
+      <End Role="paketler" EntitySet="paketler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

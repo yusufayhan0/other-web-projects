@@ -1,0 +1,40 @@
+﻿@model IEnumerable<hcsaha.DAL.resimler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.resim)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.eklenmeTarihi)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.resim)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.eklenmeTarihi)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.resimID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.resimID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.resimID })
+        </td>
+    </tr>
+}
+
+</table>

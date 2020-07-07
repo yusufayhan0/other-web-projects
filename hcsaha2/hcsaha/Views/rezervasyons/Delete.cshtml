@@ -1,0 +1,73 @@
+﻿@model hcsaha.DAL.rezervasyon
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>rezervasyon</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gun)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gun)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.adi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.soyadi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soyadi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.onay)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.onay)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Listeye Dön", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BekohavuzModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="ÜyeID" />
+    </Key>
+    <Property Name="ÜyeID" Type="int" Nullable="false" />
+    <Property Name="KullanıcıAdı" Type="nvarchar" MaxLength="50" />
+    <Property Name="Şifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Fiyat">
+    <Key>
+      <PropertyRef Name="Fiyat" />
+    </Key>
+    <Property Name="Fiyat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ogrenci" Type="int" />
+    <Property Name="Sivil" Type="int" />
+    <Property Name="AylıkOgrenci" Type="int" />
+    <Property Name="AylıkSivil" Type="int" />
+    <Property Name="HaftalıkOgrenci" Type="int" />
+    <Property Name="HaftalıkSivil" Type="int" />
+  </EntityType>
+  <EntityType Name="gunler">
+    <Key>
+      <PropertyRef Name="gunID" />
+    </Key>
+    <Property Name="gunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gun" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="RezervasyonId" />
+    </Key>
+    <Property Name="RezervasyonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gunID" Type="int" />
+    <Property Name="saat" Type="int" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="tc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="saatler">
+    <Key>
+      <PropertyRef Name="saatID" />
+    </Key>
+    <Property Name="saatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="baslangic" Type="int" />
+    <Property Name="bitis" Type="int" />
+  </EntityType>
+  <EntityContainer Name="BekohavuzModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fiyat" EntityType="Self.Fiyat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gunler" EntityType="Self.gunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezervasyon" EntityType="Self.Rezervasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saatler" EntityType="Self.saatler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

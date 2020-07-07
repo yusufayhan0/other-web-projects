@@ -1,0 +1,27 @@
+﻿@model hcsaha.DAL.saatler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>saatler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.saat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saat)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.saatID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

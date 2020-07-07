@@ -1,0 +1,46 @@
+﻿@model IEnumerable<hcsaha.DAL.admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Kullanıcı Adı
+        </th>
+        <th>
+            Şifre
+        </th>
+        <th>
+            Mail
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.kullanici)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.adminID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.adminID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.adminID })
+        </td>
+    </tr>
+}
+
+</table>

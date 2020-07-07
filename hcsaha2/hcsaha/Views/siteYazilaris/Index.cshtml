@@ -1,0 +1,88 @@
+﻿@model IEnumerable<hcsaha.DAL.siteYazilari>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.baslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.yazi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iletisimBaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iletisimYazi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rezervasyonbaslik)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rezervasyonyazi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.hakkimizda)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.header)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.baslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.yazi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iletisimBaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iletisimYazi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rezervasyonbaslik)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rezervasyonyazi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hakkimizda)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.header)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.yaziID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.yaziID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.yaziID })
+        </td>
+    </tr>
+}
+
+</table>

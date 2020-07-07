@@ -1,0 +1,99 @@
+﻿@model hcsaha.DAL.siteYazilari
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>siteYazilari</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Başlık
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.baslik)
+        </dd>
+
+        <dt>
+           Ana Yazı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yazi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.mail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iletisimBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iletisimBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.iletisimYazi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.iletisimYazi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rezervasyonbaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rezervasyonbaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rezervasyonyazi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rezervasyonyazi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hakkimizda)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hakkimizda)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.header)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.header)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.yaziID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

@@ -1,0 +1,98 @@
+﻿@model okargo.DAL.paketler
+@{
+    ViewBag.Title = "Index";
+}
+<div class="featured-blocks">
+    <div class="row-fluid">
+        <div class="featured-heading">
+            <h1>YARIN KAPINDA</h1>
+            <h5>Bizden hızlısı mezarda</h5>
+        </div>
+    </div>
+    <div class="row-fluid">
+
+
+        <div class="span4">
+            <div class="block">
+                <div class="block-title">
+                    <h1>Hakkımızda</h1>
+                    <h2>Merak ettiğiniz ne var?</h2>
+                </div>
+                <div class="block-content">
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi Sed egestas, ante et vulputate volutpat</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="span4">
+            <div class="block">
+                <div class="block-title">
+                    <h1>İletişim </h1>
+                    <h2>Bize ulaşın</h2>
+                </div>
+                <div class="block-content">
+                    <p>0(380) 716 36 37</p>
+                    <p>Jorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi Sed egestas, ante et vulputate volutpat</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="span4">
+            <div class="block">
+                <div class="block-title">
+                    <h1>Kargo takip </h1>
+                    <h2>Kargom nerede?</h2>
+                </div>
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    <div class="input-group custom-search-form">
+                        <input id="Aranacakkargo" style="margin-top:8px" name="Aranacakkargo" type="text" class="form-control" placeholder="Kargo numaranızı giriniz.">
+
+                        <button id="Aranacakkargo" class="btn btn-default" type="submit">Ara</button>
+
+                    </div>
+                }
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+    @if (Model != null)
+    {<div class="row-fluid">
+        <table class="table">
+            <tr>
+                <th>Kargo Numarası</th>
+                <th>Adı Soyadı</th>
+                <th>Adres</th>
+                <th>Nerede</th>
+                <th>Tahmini Teslim Süresi</th>
+            </tr>
+            <tr>
+                <th>@Model.gonderi_no</th>
+                <th>@Model.aliciadisoyadi</th>
+                <th>@Model.adres</th>
+                <th>@Model.nerede</th>
+                <th>@Model.tahminiteslim</th>
+            </tr>
+
+        </table>
+    </div>
+
+    }
+    else
+    {
+       <h4 class="text-center" style="color:#ff0000">@ViewBag.mesaj</h4> 
+    }
+
+
+    </div>
+
+
+

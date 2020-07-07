@@ -1,0 +1,64 @@
+﻿@model IEnumerable<havuzum.DAL.Fiyat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Yeni Kayıt", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ögrenci
+        </th>
+        <th>
+            Sivil
+        </th>
+        <th>
+           Aylık Ögrenci
+        </th>
+        <th>
+           Aylık Sivil
+        </th>
+        <th>
+           Haftalık Ögrenci
+        </th>
+        <th>
+            Haftalık Sivil
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ogrenci)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sivil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AylıkOgrenci)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AylıkSivil)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HaftalıkOgrenci)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HaftalıkSivil)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.Fiyat1 }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.Fiyat1 }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.Fiyat1 })
+        </td>
+    </tr>
+}
+
+</table>

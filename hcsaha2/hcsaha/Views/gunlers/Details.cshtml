@@ -1,0 +1,27 @@
+﻿@model hcsaha.DAL.gunler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Günler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Gün
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gun)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.gunID }) |
+    @Html.ActionLink("Listeye Geri Dön", "Index")
+</p>

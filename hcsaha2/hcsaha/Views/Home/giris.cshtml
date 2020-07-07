@@ -1,0 +1,27 @@
+﻿@model hcsaha.DAL.admin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Giriş</title>
+    <script src="~/js-login/index.js"></script>
+    <link href="~/css-login/style.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login">
+        <h1>Giriş Yap</h1>
+        @using (Html.BeginForm()) {
+            @Html.EditorFor(model=>model.kullanici, new { htmlAttributes = new { @placeholder = "Kullanıcı Adı" } })
+            @Html.EditorFor(model => model.kullanici, new { htmlAttributes = new { @placeholder = "Şifre",@type="password" } })
+            <p>@ViewBag.kont</p>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Giriş Yap</button>
+        }
+    </div>
+    <script src="~/js-login/index.js"></script>
+</body>
+</html>

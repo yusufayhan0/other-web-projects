@@ -1,0 +1,118 @@
+﻿@model okargo.DAL.paketler
+
+@{
+    ViewBag.Title = "Kargo Detay";
+}
+<div id="page-wrapper">
+
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header">Kargo Detay</h1>
+        </div>
+        <!--End Page Header -->
+    </div>
+
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.gonderi_no)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.gonderi_no)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.tc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.tc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.adi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.adi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.soyadi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.soyadi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.aliciadisoyadi)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.aliciadisoyadi)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.adres)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.adres)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.nerede)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nerede)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.fiyat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.fiyat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.agirlik)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.agirlik)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.sehirler.sehir)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sehirler.sehir)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.sehirler1.sehir)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.sehirler1.sehir)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @if (Session["calisan"] == "yonetici")
+        {
+            @Html.ActionLink("Güncelle", "Edit", new { id = item.gonderiID })
+
+            @Html.ActionLink("Sil", "Delete", new { id = item.gonderiID })
+
+        }
+        @Html.ActionLink("Geri", "Index")
+    </p>
+</div>

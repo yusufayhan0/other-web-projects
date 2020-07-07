@@ -1,0 +1,110 @@
+﻿@model IEnumerable<okargo.DAL.paketler>
+
+@{
+    ViewBag.Title = "Kargolar";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div id="page-wrapper" style="background-color:#e6cf8b;">
+
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header">Kargolar</h1>
+        </div>
+        <!--End Page Header -->
+    </div>
+
+
+    <p>
+        @Html.ActionLink("Kargo Al", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.gonderi_no)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.soyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.aliciadisoyadi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.adres)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nerede)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.agirlik)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sehirler.sehir)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sehirler1.sehir)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.gonderi_no)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.tc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.adi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.soyadi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.aliciadisoyadi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.adres)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nerede)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fiyat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.agirlik)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sehirler.sehir)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.sehirler1.sehir)
+                </td>
+                <td>@Html.ActionLink("Detay", "Details", new { id = item.gonderiID })|
+
+                @if (Session["calisan"] == "yonetici")
+                {
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.gonderiID })
+
+                    @Html.ActionLink("Sil", "Delete", new { id = item.gonderiID })
+
+                }
+                    
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

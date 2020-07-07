@@ -1,0 +1,36 @@
+﻿@model okargo.DAL.Slider
+
+@{
+    ViewBag.Title = "Resim detayı";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="page-wrapper">
+
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Resim detayı</h1>
+        </div>
+        <!--End Page Header -->
+    </div>
+
+    <div>
+        <h4>Slider</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.yol)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.yol)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.sliderID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

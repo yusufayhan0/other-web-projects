@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="kullanici" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="gunler">
+    <Key>
+      <PropertyRef Name="gunID" />
+    </Key>
+    <Property Name="gunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gun" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="resimler">
+    <Key>
+      <PropertyRef Name="resimID" />
+    </Key>
+    <Property Name="resimID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="resim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="eklenmeTarihi" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="rezervasyon">
+    <Key>
+      <PropertyRef Name="rezervasyonID" />
+    </Key>
+    <Property Name="rezervasyonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gun" Type="Int32" />
+    <Property Name="saat" Type="Int32" />
+    <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="onay" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="saatler">
+    <Key>
+      <PropertyRef Name="saatID" />
+    </Key>
+    <Property Name="saatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="saat" Type="Int32" />
+  </EntityType>
+  <EntityType Name="siteYazilari">
+    <Key>
+      <PropertyRef Name="yaziID" />
+    </Key>
+    <Property Name="yaziID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="baslik" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="yazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="iletisimBaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="iletisimYazi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="rezervasyonbaslik" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rezervasyonyazi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="hakkimizda" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="hcsahaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin" EntityType="Self.admin" />
+    <EntitySet Name="gunler" EntityType="Self.gunler" />
+    <EntitySet Name="resimler" EntityType="Self.resimler" />
+    <EntitySet Name="rezervasyon" EntityType="Self.rezervasyon" />
+    <EntitySet Name="saatler" EntityType="Self.saatler" />
+    <EntitySet Name="siteYazilari" EntityType="Self.siteYazilari" />
+  </EntityContainer>
+</Schema>

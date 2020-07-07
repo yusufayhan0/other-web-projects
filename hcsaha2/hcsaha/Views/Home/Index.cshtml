@@ -1,0 +1,145 @@
+﻿@model Tuple<List<hcsaha.DAL.resimler>, hcsaha.DAL.siteYazilari>
+@{
+    ViewBag.Title = "HCSaha";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link href="~/vendor/magnific-popup/magnific-popup.css" rel="stylesheet" />
+    <link href="~/css/creative.min.css" rel="stylesheet" />
+</head>
+<body id="page-top">
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">HCSAHA</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="page-scroll" href="#about">Rezervasyon</a>
+                        
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#services">Hakkımızda</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Resimler</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <header style="background-image:url(@Model.Item2.header);">
+        <div class="header-content">
+            <div class="header-content-inner">
+                <h1 id="homeHeading">@Model.Item2.baslik</h1>
+                <hr>
+                <p>@Model.Item2.yazi</p>
+                
+            </div>
+        </div>
+    </header>
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">@Model.Item2.rezervasyonbaslik</h2>
+                    <hr class="light">
+                    <p class="text-faded">@Model.Item2.rezervasyonyazi</p>
+                    <a href="/Home/rezervas" class="page-scroll btn btn-default btn-xl sr-button">Rezervasyon Yap</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Hakkımızda</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <p>
+                    @Html.Raw(Model.Item2.hakkimizda)
+                </p>
+            </div>
+        </div>
+    </section>
+    <section class="no-padding" id="portfolio">
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+               @foreach (var item in Model.Item1)
+               {
+                <div class="col-lg-4 col-sm-6">
+                    <div class="portfolio-box">
+                        <img src="@(item.resim)" style="width:100%; height:312px;" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+
+                                <div class="project-name">
+                                    HCSAHA
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               }
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">@Model.Item2.iletisimBaslik</h2>
+                    <hr class="primary">
+                    <p>@Model.Item2.iletisimYazi</p>
+                </div>
+                <div class="col-lg-4 col-lg-offset-2 text-center">
+                    <i class="fa fa-phone fa-3x sr-contact"></i>
+                    <p>@Model.Item2.tel</p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <p><a href="#">@Model.Item2.mail</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="~/vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="~/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/creative.js"></script>
+    
+</body>
+</html>
+
+
+

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<hcsaha.DAL.rezervasyon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gun)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.saat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.onay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.gun)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.onay)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.rezervasyonID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.rezervasyonID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.rezervasyonID })
+        </td>
+    </tr>
+}
+
+</table>

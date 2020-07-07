@@ -1,0 +1,76 @@
+﻿@model IEnumerable<havuzum.DAL.Rezervasyon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<p>
+    @Html.ActionLink("Yeni Kayıt", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.gunID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.saatID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.soyadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cinsID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.onay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.durumID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.gunID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.saatID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.adi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soyadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cinsID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.onay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.durumID)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.RezervasyonId }) |
+    
+            @Html.ActionLink("Sil", "Delete", new { id=item.RezervasyonId })
+        </td>
+    </tr>
+}
+
+</table>

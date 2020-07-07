@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BekohavuzModelStoreContainer" CdmEntityContainer="BekohavuzEntities">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="BekohavuzModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="ÜyeID" ColumnName="ÜyeID" />
+          <ScalarProperty Name="KullanıcıAdı" ColumnName="KullanıcıAdı" />
+          <ScalarProperty Name="Şifre" ColumnName="Şifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fiyat">
+      <EntityTypeMapping TypeName="BekohavuzModel.Fiyat">
+        <MappingFragment StoreEntitySet="Fiyat">
+          <ScalarProperty Name="Fiyat1" ColumnName="Fiyat" />
+          <ScalarProperty Name="Ogrenci" ColumnName="Ogrenci" />
+          <ScalarProperty Name="Sivil" ColumnName="Sivil" />
+          <ScalarProperty Name="AylıkOgrenci" ColumnName="AylıkOgrenci" />
+          <ScalarProperty Name="AylıkSivil" ColumnName="AylıkSivil" />
+          <ScalarProperty Name="HaftalıkOgrenci" ColumnName="HaftalıkOgrenci" />
+          <ScalarProperty Name="HaftalıkSivil" ColumnName="HaftalıkSivil" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gunler">
+      <EntityTypeMapping TypeName="BekohavuzModel.gunler">
+        <MappingFragment StoreEntitySet="gunler">
+          <ScalarProperty Name="gunID" ColumnName="gunID" />
+          <ScalarProperty Name="gun" ColumnName="gun" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rezervasyon">
+      <EntityTypeMapping TypeName="BekohavuzModel.Rezervasyon">
+        <MappingFragment StoreEntitySet="Rezervasyon">
+          <ScalarProperty Name="saat" ColumnName="saat" />
+          <ScalarProperty Name="RezervasyonId" ColumnName="RezervasyonId" />
+          <ScalarProperty Name="gunID" ColumnName="gunID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="tc" ColumnName="tc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saatler">
+      <EntityTypeMapping TypeName="BekohavuzModel.saatler">
+        <MappingFragment StoreEntitySet="saatler">
+          <ScalarProperty Name="saatID" ColumnName="saatID" />
+          <ScalarProperty Name="baslangic" ColumnName="baslangic" />
+          <ScalarProperty Name="bitis" ColumnName="bitis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

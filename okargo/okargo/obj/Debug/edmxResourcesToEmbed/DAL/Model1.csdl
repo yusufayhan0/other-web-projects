@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="okargoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="paketler">
+    <Key>
+      <PropertyRef Name="gonderiID" />
+    </Key>
+    <Property Name="gonderiID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gonderi_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="adi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="nereden" Type="Int32" />
+    <Property Name="nereye" Type="Int32" />
+    <Property Name="adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nerede" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="fiyat" Type="Int32" />
+    <Property Name="agirlik" Type="Int32" />
+    <NavigationProperty Name="sehirler" Relationship="Self.FK_paketler_sehirler" FromRole="paketler" ToRole="sehirler" />
+    <NavigationProperty Name="sehirler1" Relationship="Self.FK_paketler_sehirler1" FromRole="paketler" ToRole="sehirler" />
+    <Property Name="aliciadisoyadi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="tahminiteslim" Type="DateTime" Precision="3" />
+    <Property Name="alimsaati" Type="DateTime" Precision="3" />
+    <Property Name="dagitimacikti" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="personel">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mail" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="yetki" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="sehirler">
+    <Key>
+      <PropertyRef Name="sehirID" />
+    </Key>
+    <Property Name="sehirID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="paketler" Relationship="Self.FK_paketler_sehirler" FromRole="sehirler" ToRole="paketler" />
+    <NavigationProperty Name="paketler1" Relationship="Self.FK_paketler_sehirler1" FromRole="sehirler" ToRole="paketler" />
+  </EntityType>
+  <EntityType Name="Slider">
+    <Key>
+      <PropertyRef Name="sliderID" />
+    </Key>
+    <Property Name="sliderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_paketler_sehirler">
+    <End Role="sehirler" Type="Self.sehirler" Multiplicity="0..1" />
+    <End Role="paketler" Type="Self.paketler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sehirler">
+        <PropertyRef Name="sehirID" />
+      </Principal>
+      <Dependent Role="paketler">
+        <PropertyRef Name="nereden" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_paketler_sehirler1">
+    <End Role="sehirler" Type="Self.sehirler" Multiplicity="0..1" />
+    <End Role="paketler" Type="Self.paketler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sehirler">
+        <PropertyRef Name="sehirID" />
+      </Principal>
+      <Dependent Role="paketler">
+        <PropertyRef Name="nereye" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="okargoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="paketler" EntityType="Self.paketler" />
+    <EntitySet Name="personel" EntityType="Self.personel" />
+    <EntitySet Name="sehirler" EntityType="Self.sehirler" />
+    <EntitySet Name="Slider" EntityType="Self.Slider" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <AssociationSet Name="FK_paketler_sehirler" Association="Self.FK_paketler_sehirler">
+      <End Role="sehirler" EntitySet="sehirler" />
+      <End Role="paketler" EntitySet="paketler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_paketler_sehirler1" Association="Self.FK_paketler_sehirler1">
+      <End Role="sehirler" EntitySet="sehirler" />
+      <End Role="paketler" EntitySet="paketler" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

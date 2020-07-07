@@ -1,0 +1,43 @@
+﻿@model hcsaha.DAL.admin
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>admin</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Kullanıcı Adı:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.kullanici)
+        </dd>
+
+        <dt>
+            Şifre:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sifre)
+        </dd>
+
+        <dt>
+            Maili:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.adminID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

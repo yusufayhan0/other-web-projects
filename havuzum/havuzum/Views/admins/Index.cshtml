@@ -1,0 +1,37 @@
+﻿@model IEnumerable<havuzum.DAL.admin>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Kayıt</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+          Kullanıcı Adı
+        </th>
+        <th>
+           Şifre
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullanıcıAdı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Şifre)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "güncelle", new { id=item.ÜyeID }) |
+           
+        </td>
+    </tr>
+}
+
+</table>

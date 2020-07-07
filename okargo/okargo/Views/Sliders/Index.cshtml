@@ -1,0 +1,44 @@
+﻿@model IEnumerable<okargo.DAL.Slider>
+
+@{
+    ViewBag.Title = "Resimler";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="page-wrapper">
+
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Resimler</h1>
+        </div>
+        <!--End Page Header -->
+    </div>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                Resim
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img style="width:150px;height:150px" />
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.sliderID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.sliderID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.sliderID })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

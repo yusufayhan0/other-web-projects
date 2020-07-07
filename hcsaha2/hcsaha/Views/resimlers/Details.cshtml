@@ -1,0 +1,35 @@
+﻿@model hcsaha.DAL.resimler
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>resimler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.resim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resim)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eklenmeTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eklenmeTarihi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.resimID }) |
+    @Html.ActionLink("Listeye Dön", "Index")
+</p>

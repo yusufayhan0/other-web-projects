@@ -1,0 +1,43 @@
+﻿@model okargo.DAL.Slider
+
+@{
+    ViewBag.Title = "Resim sil";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div id="page-wrapper">
+
+    <div class="row">
+        <!-- Page Header -->
+        <div class="col-lg-12">
+            <h1 class="page-header text-center">Resim sil</h1>
+        </div>
+        <!--End Page Header -->
+    </div>
+
+    <h3>Resmi silmek istiyor musunuz?</h3>
+    <div>
+        <h4>Slider</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.yol)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.yol)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>

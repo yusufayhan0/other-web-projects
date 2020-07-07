@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="hcsahaEntities">
+    <EntitySetMapping Name="admin">
+      <EntityTypeMapping TypeName="Model.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="adminID" ColumnName="adminID" />
+          <ScalarProperty Name="kullanici" ColumnName="kullanici" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="resimler">
+      <EntityTypeMapping TypeName="Model.resimler">
+        <MappingFragment StoreEntitySet="resimler">
+          <ScalarProperty Name="resimID" ColumnName="resimID" />
+          <ScalarProperty Name="resim" ColumnName="resim" />
+          <ScalarProperty Name="eklenmeTarihi" ColumnName="eklenmeTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rezervasyon">
+      <EntityTypeMapping TypeName="Model.rezervasyon">
+        <MappingFragment StoreEntitySet="rezervasyon">
+          <ScalarProperty Name="onay" ColumnName="onay" />
+          <ScalarProperty Name="saat" ColumnName="saat" />
+          <ScalarProperty Name="gun" ColumnName="gun" />
+          <ScalarProperty Name="rezervasyonID" ColumnName="rezervasyonID" />
+          <ScalarProperty Name="adi" ColumnName="adi" />
+          <ScalarProperty Name="soyadi" ColumnName="soyadi" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="siteYazilari">
+      <EntityTypeMapping TypeName="Model.siteYazilari">
+        <MappingFragment StoreEntitySet="siteYazilari">
+          <ScalarProperty Name="header" ColumnName="header" />
+          <ScalarProperty Name="yaziID" ColumnName="yaziID" />
+          <ScalarProperty Name="baslik" ColumnName="baslik" />
+          <ScalarProperty Name="yazi" ColumnName="yazi" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="iletisimBaslik" ColumnName="iletisimBaslik" />
+          <ScalarProperty Name="iletisimYazi" ColumnName="iletisimYazi" />
+          <ScalarProperty Name="rezervasyonbaslik" ColumnName="rezervasyonbaslik" />
+          <ScalarProperty Name="rezervasyonyazi" ColumnName="rezervasyonyazi" />
+          <ScalarProperty Name="hakkimizda" ColumnName="hakkimizda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="gunler">
+      <EntityTypeMapping TypeName="Model.gunler">
+        <MappingFragment StoreEntitySet="gunler">
+          <ScalarProperty Name="gun" ColumnName="gun" />
+          <ScalarProperty Name="gunID" ColumnName="gunID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="saatler">
+      <EntityTypeMapping TypeName="Model.saatler">
+        <MappingFragment StoreEntitySet="saatler">
+          <ScalarProperty Name="saat" ColumnName="saat" />
+          <ScalarProperty Name="saatID" ColumnName="saatID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,73 @@
+﻿@model havuzum.DAL.Fiyat
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+
+<div>
+    <h4>SİL</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Ögrenci
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ogrenci)
+        </dd>
+
+        <dt>
+           Sivil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sivil)
+        </dd>
+
+        <dt>
+         Aylık Ögrenci
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AylıkOgrenci)
+        </dd>
+
+        <dt>
+          Aylık Sivil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AylıkSivil)
+        </dd>
+
+        <dt>
+           Haftalık Ögrenci
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaftalıkOgrenci)
+        </dd>
+
+        <dt>
+           Haftalık Sivil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HaftalıkSivil)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>

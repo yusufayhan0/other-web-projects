@@ -1,0 +1,32 @@
+﻿@model IEnumerable<hcsaha.DAL.gunler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_admin.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+           Günler
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.gun)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", new { id=item.gunID }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.gunID }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.gunID })
+        </td>
+    </tr>
+}
+
+</table>

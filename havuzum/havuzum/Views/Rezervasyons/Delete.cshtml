@@ -1,0 +1,89 @@
+﻿@model havuzum.DAL.Rezervasyon
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+
+<div>
+    <h4>Sil</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.gunID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gunID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.saatID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.saatID)
+        </dd>
+
+        <dt>
+          Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.adi)
+        </dd>
+
+        <dt>
+            Soyadı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soyadi)
+        </dd>
+
+        <dt>
+            TC
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cinsID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cinsID)
+        </dd>
+
+        <dt>
+            Onay
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.onay)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.durumID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.durumID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-default" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>

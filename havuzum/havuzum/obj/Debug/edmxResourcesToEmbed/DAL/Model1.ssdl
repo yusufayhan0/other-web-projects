@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BekohavuzModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="ÜyeID" />
+    </Key>
+    <Property Name="ÜyeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KullanıcıAdı" Type="nvarchar" MaxLength="50" />
+    <Property Name="Şifre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cinsiyetler">
+    <Key>
+      <PropertyRef Name="cinsID" />
+    </Key>
+    <Property Name="cinsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cinsiyet" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="durumlar">
+    <Key>
+      <PropertyRef Name="durumID" />
+    </Key>
+    <Property Name="durumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="durum" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Fiyat">
+    <Key>
+      <PropertyRef Name="Fiyat" />
+    </Key>
+    <Property Name="Fiyat" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ogrenci" Type="int" />
+    <Property Name="Sivil" Type="int" />
+    <Property Name="AylıkOgrenci" Type="int" />
+    <Property Name="AylıkSivil" Type="int" />
+    <Property Name="HaftalıkOgrenci" Type="int" />
+    <Property Name="HaftalıkSivil" Type="int" />
+  </EntityType>
+  <EntityType Name="gunler">
+    <Key>
+      <PropertyRef Name="gunID" />
+    </Key>
+    <Property Name="gunID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gun" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="RezervasyonId" />
+    </Key>
+    <Property Name="RezervasyonId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gunID" Type="int" />
+    <Property Name="saatID" Type="int" />
+    <Property Name="adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="soyadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="tc" Type="nvarchar" MaxLength="50" />
+    <Property Name="cinsID" Type="int" />
+    <Property Name="onay" Type="bit" />
+    <Property Name="durumID" Type="int" />
+  </EntityType>
+  <EntityType Name="saatler">
+    <Key>
+      <PropertyRef Name="saatID" />
+    </Key>
+    <Property Name="saatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="saat" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="BekohavuzModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cinsiyetler" EntityType="Self.cinsiyetler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="durumlar" EntityType="Self.durumlar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fiyat" EntityType="Self.Fiyat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="gunler" EntityType="Self.gunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rezervasyon" EntityType="Self.Rezervasyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="saatler" EntityType="Self.saatler" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

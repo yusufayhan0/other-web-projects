@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BekohavuzModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="ÜyeID" />
+    </Key>
+    <Property Name="ÜyeID" Type="Int32" Nullable="false" />
+    <Property Name="KullanıcıAdı" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Şifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="cinsiyetler">
+    <Key>
+      <PropertyRef Name="cinsID" />
+    </Key>
+    <Property Name="cinsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cinsiyet" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Fiyat">
+    <Key>
+      <PropertyRef Name="Fiyat1" />
+    </Key>
+    <Property Name="Fiyat1" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ogrenci" Type="Int32" />
+    <Property Name="Sivil" Type="Int32" />
+    <Property Name="AylıkOgrenci" Type="Int32" />
+    <Property Name="AylıkSivil" Type="Int32" />
+    <Property Name="HaftalıkOgrenci" Type="Int32" />
+    <Property Name="HaftalıkSivil" Type="Int32" />
+  </EntityType>
+  <EntityType Name="gunler">
+    <Key>
+      <PropertyRef Name="gunID" />
+    </Key>
+    <Property Name="gunID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gun" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Rezervasyon">
+    <Key>
+      <PropertyRef Name="RezervasyonId" />
+    </Key>
+    <Property Name="RezervasyonId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gunID" Type="Int32" />
+    <Property Name="saatID" Type="Int32" />
+    <Property Name="adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="soyadi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cinsID" Type="Int32" />
+    <Property Name="onay" Type="Boolean" />
+    <Property Name="durumID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="saatler">
+    <Key>
+      <PropertyRef Name="saatID" />
+    </Key>
+    <Property Name="saatID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="saat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BekohavuzEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="admin" EntityType="Self.admin" />
+    <EntitySet Name="cinsiyetler" EntityType="Self.cinsiyetler" />
+    <EntitySet Name="Fiyat" EntityType="Self.Fiyat" />
+    <EntitySet Name="gunler" EntityType="Self.gunler" />
+    <EntitySet Name="Rezervasyon" EntityType="Self.Rezervasyon" />
+    <EntitySet Name="saatler" EntityType="Self.saatler" />
+    <EntitySet Name="durumlar" EntityType="BekohavuzModel.durumlar" />
+  </EntityContainer>
+  <EntityType Name="durumlar">
+    <Key>
+      <PropertyRef Name="durumID" />
+    </Key>
+    <Property Name="durumID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="durum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

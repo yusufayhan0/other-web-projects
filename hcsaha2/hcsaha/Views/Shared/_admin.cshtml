@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+    @if (Convert.ToString(Session["k"]) == "")
+    {
+        Response.Redirect("/Home/giris");
+    }
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                    @Html.ActionLink("Anasayfa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Admin", "Index", "admins", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Günler", "Index", "gunlers", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Resimler", "Index", "resimlers", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Rezervasyon", "Index", "rezervasyons", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Saatler", "Index", "saatlers", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Site Yazıları", "Index", "siteYazilaris", new { area = "" }, new { @class = "navbar-brand" })
+                
+                
+            </div>
+            @using (Html.BeginForm("cikis", "Home"))
+            {
+                <p style="float:right; margin-top:13px; font-size:20px; margin-left:12px;color:#fff;">Hoşgeldin @Session["k"]</p>
+                <input style="float:right;margin-top:15px;" id="Submit1" type="submit" value="Çıkış" />
+            }
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - HCSAHA</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>
