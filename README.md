@@ -8,4 +8,4 @@ basit yapıda kargo sitesi,
 
 klasörlerin içinde yedeklenmiş şekilde veritabanları bulunmakta
 
-site tasarımları bana ait değildir.
+hazır site arayüzü kullanılmıştır. backend kısmı bana aittir
